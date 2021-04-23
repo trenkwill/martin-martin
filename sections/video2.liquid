@@ -1,0 +1,28 @@
+
+<video width="320" height="240" autoplay loop >
+  <source src="{{ section.settings.url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+{% schema %}
+{
+  "name": "Video html",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "url",
+      "label": "Lien de la vidéo",
+	  "info" : "Mettre une video au format .mp4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video html",
+      "category": "Vidéo"
+    }
+  ]
+}
+{% endschema %}
