@@ -200,7 +200,29 @@
   },
   "collections": {
     "general": {
-      "view_all": "Tous",
+      "view_all": "Voir tous les articles",
+      "view_all_label": "Afficher tous les produits de la collection {{ collection_name }}",
+      "no_matches": "Cette collection ne comporte aucun produit",
+      "items_with_count": {
+        "one": "{{ count }} produit",
+        "other": "{{ count }} produits"
+      },
+      "collection_label": "Collection"
+    },
+    "catalog": {
+      "title": "Catalogue"
+    },
+    "sorting": {
+      "title": "Trier par"
+    },
+    "filters": {
+      "title_tags": "Filtrer par",
+      "all_tags": "Tous les produits"
+    }
+  },
+  "collections-upgrade": {
+    "general": {
+      "view_all": "Voir plus de looks",
       "view_all_label": "Afficher tous les produits de la collection {{ collection_name }}",
       "no_matches": "Cette collection ne comporte aucun produit",
       "items_with_count": {
