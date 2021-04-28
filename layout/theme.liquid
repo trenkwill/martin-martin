@@ -23,7 +23,8 @@
   <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
   <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
-
+  <link rel="stylesheet" href="{{'owl.carousel.min.css' | asset_url }}">
+  
   {%- if canonical_url != blank  -%}
     <link rel="canonical" href="{{ canonical_url }}">
   {%- endif -%}
@@ -201,5 +202,28 @@
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
   </ul>
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="{{'owl.carousel.min.js' | asset_url }}"></script>
+  <script>
+    $(document).ready(function(){
+      $(".carousel").owlCarousel({
+        items:2,
+        nav: true,
+        loop: true,
+        margin:10,
+        autoplay: false,
+        responsive:{
+            0:{
+                items:1
+            },
+            749:{
+                items:2
+            }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

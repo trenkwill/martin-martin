@@ -2,91 +2,68 @@
 On the HOMEPAGE
 {% endcomment %}
 
-<div class="bg-nude">
-  <div class="page-width">
-    {% if section.settings.title != blank %}
-      <div class="text-center header-nude">
-        <h2>{{ section.settings.title | escape }}</h2>
-      </div>
-      <div class="text-right">
-        {% if section.settings.show_view_all %}
-          <a href="{{ collection.url }}" class="btn_show_all" aria-label="{{ 'collections.general.view_all_label' | t: collection_name: collection.title }}">
-              {{ 'collections.general.view_all' | t }}
-          </a>
-        {% endif %}
-      </div>
-    {% endif %}
+<div class="page-width">
+  {% if section.settings.title != blank %}
+  	<div class="header-upgrade text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+  	</div>
+    <div class="text-right">
+      {% if section.settings.show_view_all %}
+        <a href="{{ collection.url }}" class="btn_show_all-upgrade" aria-label="{{ 'collections.general.view_all_label' | t: collection_name: collection.title }}">
+          {{ 'collections-upgrade.general.view_all' | t }}
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
 
-    {%- assign collection = collections[section.settings.collection] -%}
+  {%- assign collection = collections[section.settings.collection] -%}
 
-    {% case section.settings.grid %}
-      {% when 2 %}
-        {%- assign max_height = 530 -%}
-        {%- assign grid_item_width = 'medium-up--one-half' -%}
-      {% when 3 %}
-        {%- assign max_height = 345 -%}
-        {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
-      {% when 4 %}
-        {%- assign max_height = 250 -%}
-        {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
-      {% when 5 %}
-        {%- assign max_height = 195 -%}
-        {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
-    {% endcase %}
+  {% case section.settings.grid %}
+    {% when 2 %}
+      {%- assign max_height = 530 -%}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign max_height = 345 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign max_height = 250 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign max_height = 195 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+  {% endcase %}
 
-    {%- assign product_limit = section.settings.grid | times: section.settings.rows -%}
+  {%- assign product_limit = section.settings.grid | times: section.settings.rows -%}
 
-    <ul class="grid grid--uniform">
-      {% for product in collection.products limit: product_limit %}
-        <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-          {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
-        </li>
-      {% else %}
+  <ul class="grid grid--uniform">
+    {% for product in collection.products limit: product_limit %}
+      <li class="grid__item grid__item-upgrade grid__item--{{section.id}} {{ grid_item_width }}">
+        {% include 'product-card-grid-upgrade', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+      </li>
+    {% else %}
 
-        {% for i in (1..product_limit) %}
-          <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-            <div class="grid-view-item product-card">
-              <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="#">
-                <span class="visually-hidden">{{ 'homepage.onboarding.product_title' | t }}</span>
-              </a>
-              <div class="grid-view-item__image-wrapper">
-                {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-                {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-              <div class="h4 grid-view-item__title" aria-hidden="true">{{ 'homepage.onboarding.product_title' | t }}</div>
+      {% for i in (1..product_limit) %}
+        <li class="grid__item grid__item-upgrade grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="grid-view-item-upgrade grid-view-item product-card">
+            <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="#">
+              <span class="visually-hidden">{{ 'homepage.onboarding.product_title' | t }}</span>
+            </a>
+            <div class="grid-view-item__image-wrapper-upgrade">
+              {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+              {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
             </div>
-          </li>
-        {% endfor %}
+          </div>
+        </li>
       {% endfor %}
-    </ul>
-  </div>
+    {% endfor %}
+  </ul>
 </div>
+
+
 
 {% schema %}
 {
-  "name": {
-    "cs": "Propagovaná kolekce",
-    "da": "Udvalgt kollektion",
-    "de": "Vorgestellte Kategorie",
-    "en": "Featured collection",
-    "es": "Colección destacada",
-    "fi": "Esittelyssä oleva kokoelma",
-    "fr": "Collection en vedette",
-    "it": "Collezione in evidenza",
-    "ja": "特集コレクション",
-    "ko": "추천 컬렉션",
-    "nb": "Utvalgt samling",
-    "nl": "Uitgelichte collectie",
-    "pl": "Polecana kolekcja",
-    "pt-BR": "Coleção em destaque",
-    "pt-PT": "Coleção em destaque",
-    "sv": "Utvald kollektion",
-    "th": "คอลเลกชันแนะนำ",
-    "tr": "Öne çıkan koleksiyon",
-    "vi": "Bộ sưu tập nổi bật",
-    "zh-CN": "特色产品系列",
-    "zh-TW": "精選商品系列"
-  },
+  "name": "Collection upgrade",
   "class": "index-section",
   "settings": [
     {
@@ -259,35 +236,35 @@ On the HOMEPAGE
     {
       "type": "checkbox",
       "id": "show_view_all",
-      "label":"Afficher le bouton “Voir tous les articles”",
+      "label": {
+        "cs": "Zobrazit tlačítko Zobrazit vše",
+        "da": "Vis knappen \"Se flere\"",
+        "de": "'Alle anzeigen' Button anzeigen",
+        "en": "Show 'View all' button",
+        "es": "Mostrar el botón 'Ver todo'",
+        "fi": "Näytä \"Näytä kaikki\" -painike",
+        "fr": "Afficher le bouton “Tout voir”",
+        "it": "Mostra il pulsante \"Visualizza tutto\"",
+        "ja": "「すべて表示」ボタンを表示する",
+        "ko": "'모두 보기' 버튼 표시",
+        "nb": "Vis «Se alle»-knapp",
+        "nl": "Knop 'Alles weergeven' weergeven",
+        "pl": "Pokaż przycisk „Wyświetl wszystkie”",
+        "pt-BR": "Exibir botão 'Ver tudo'",
+        "pt-PT": "Mostrar botão 'Ver tudo'",
+        "sv": "Visa \"Visa alla\"-knappen",
+        "th": "แสดงปุ่ม 'ดูทั้งหมด'",
+        "tr": "\"Tümünü görüntüle\" düğmesini göster",
+        "vi": "Hiển thị nút \"Xem tất cả\"",
+        "zh-CN": "显示“查看全部”按钮",
+        "zh-TW": "顯示「檢視全部」按鈕"
+      },
       "default": false
     }
   ],
   "presets": [
     {
-      "name": {
-        "cs": "Propagovaná kolekce",
-        "da": "Udvalgt kollektion",
-        "de": "Vorgestellte Kategorie",
-        "en": "Featured collection",
-        "es": "Colección destacada",
-        "fi": "Esittelyssä oleva kokoelma",
-        "fr": "Collection en vedette",
-        "it": "Collezione in evidenza",
-        "ja": "特集コレクション",
-        "ko": "추천 컬렉션",
-        "nb": "Utvalgt samling",
-        "nl": "Uitgelichte collectie",
-        "pl": "Polecana kolekcja",
-        "pt-BR": "Coleção em destaque",
-        "pt-PT": "Coleção em destaque",
-        "sv": "Utvald kollektion",
-        "th": "คอลเลกชันแนะนำ",
-        "tr": "Öne çıkan koleksiyon",
-        "vi": "Bộ sưu tập nổi bật",
-        "zh-CN": "特色产品系列",
-        "zh-TW": "精選商品系列"
-      },
+      "name": "Collection en vedette upgrade",
       "category": {
         "cs": "Kolekce",
         "da": "Kollektion",

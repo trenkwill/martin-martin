@@ -17,9 +17,9 @@
   {% endcase %}
 
   <div class="collection-grid">
-    <ul class="grid grid--uniform">
+    <ul class="grid grid--uniform carousel owl-carousel">
       {% for block in section.blocks limit: section.blocks.size %}
-        <li class="grid__item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+        <li class="grid__item" {{ block.shopify_attributes }}>
           {%- assign collection = collections[block.settings.collection] -%}
           {% include 'collection-grid-item', collection: collection %}
         </li>
@@ -111,38 +111,7 @@
         "zh-CN": "产品系列列表",
         "zh-TW": "商品系列清單"
       }
-    },
-    {
-      "type": "range",
-      "id": "grid",
-      "label": {
-        "cs": "Počet kolekcí na řádek",
-        "da": "Kollektioner pr. række",
-        "de": "Kategorien per Reihe",
-        "en": "Collections per row",
-        "es": "Colecciones por fila",
-        "fi": "Kokoelmia per rivi",
-        "fr": "Collections par rangée",
-        "it": "Collezioni per riga",
-        "ja": "行あたりのコレクション数",
-        "ko": "열 별 컬렉션",
-        "nb": "Samlinger per rad",
-        "nl": "Collecties per rij",
-        "pl": "Liczba kolekcji na wiersz",
-        "pt-BR": "Coleções por linha",
-        "pt-PT": "Coleções por linha",
-        "sv": "Produktserier per rad",
-        "th": "คอลเลกชันต่อแถว",
-        "tr": "Satır başına koleksiyon",
-        "vi": "Số bộ sưu tập trên mỗi hàng",
-        "zh-CN": "每行产品系列数",
-        "zh-TW": "每列商品系列數"
-      },
-      "min": 2,
-      "max": 5,
-      "step": 1,
-      "default": 3
-    }
+    } 
   ],
   "blocks": [
     {
@@ -204,50 +173,14 @@
   "presets": [
     {
       "name": {
-        "cs": "Seznam kolekcí",
-        "da": "Kollektionsliste",
-        "de": "Kategorien-Liste",
-        "en": "Collection list",
-        "es": "Lista de colecciones",
-        "fi": "Kokoelmaluettelo",
-        "fr": "Page de liste des collections",
-        "it": "Elenco delle collezioni",
-        "ja": "コレクションリスト",
-        "ko": "컬렉션 목록",
-        "nb": "Samlingsliste",
-        "nl": "Collectielijst",
-        "pl": "Lista kolekcji",
-        "pt-BR": "Lista de coleções",
-        "pt-PT": "Lista de coleções",
-        "sv": "Kollektionslista",
-        "th": "รายการคอลเลกชัน",
-        "tr": "Koleksiyon listesi",
-        "vi": "Danh sách bộ sưu tập",
-        "zh-CN": "产品系列列表",
-        "zh-TW": "商品系列清單"
+
+        "fr": "Page de liste des collections"
+        
       },
       "category": {
-        "cs": "Kolekce",
-        "da": "Kollektion",
-        "de": "Kategorie",
-        "en": "Collection",
-        "es": "Colección",
-        "fi": "Kokoelma",
-        "fr": "Collection",
-        "it": "Collezione",
-        "ja": "コレクション",
-        "ko": "컬렉션",
-        "nb": "Samling",
-        "nl": "Collectie",
-        "pl": "Kolekcja",
-        "pt-BR": "Coleção",
-        "pt-PT": "Coleção",
-        "sv": "Produktserie",
-        "th": "คอลเลกชัน",
-        "tr": "Koleksiyon",
-        "vi": "Bộ sưu tập",
-        "zh-CN": "收藏",
-        "zh-TW": "商品系列"
+        
+        "fr": "Collection"
+        
       },
       "blocks": [
         {
