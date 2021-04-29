@@ -7161,11 +7161,62 @@ hr {
 
 /*Images 1*/
 .img-lookbook {
-  max-height: 1000Px;}
+  max-width: 695px;
+  object-fit: cover;
+  position: relative;
+  left: -146px;}
+
+.img-lookbook2 {
+  max-width: 459px;
+  object-fit: cover;
+  position: relative;
+  left: -17px;
+  top: -213px;}
 
 .custom-content-lookbook{
    max-height: 1000Px;}
-}
+
+/*Images 2*/
+.img-lookbook3 {
+    max-width: 462px;
+    object-fit: cover;
+    position: relative;
+    left: -112px;
+    bottom: 196px;}
+
+.img-lookbook4 {
+    max-height: 794px;
+    object-fit: cover;
+    position: relative;
+    left: 33px;
+    top: -30px;}
+
+.img-lookbook5 {
+  max-width: 585px;
+  object-fit: cover;
+  position: relative;
+  left: -26px;}
+
+/*Rich text 3*/
+.rich-text__text--lkb3{
+  padding-right: 195px;
+  padding-left: 195px;
+  text-transform: uppercase;}
+
+  /*Images 3*/
+.img-lookbook6 {
+    max-height: 685px;
+    object-fit: cover;
+    position: relative;
+    left: -29px;
+    top: -120px;}
+
+.img-lookbook7 {
+    max-width: 690px;
+    object-fit: cover;
+    position: relative;
+    left: 104px;
+    bottom: -48px;}
 
 /*================ Section About ================*/
 
@@ -7307,4 +7358,20 @@ div#shopify-section-custom-content-lookbook{
   padding:0;
   margin-top:12px;
   height: 186vh;
+}
+
+div#shopify-section-rich-text-lookbook2{
+  padding-top: 90px;
+}
+
+div#shopify-section-custom-content-lookbook2{
+  max-height: 1807Px;
+}
+
+div#shopify-section-rich-text-lookbook3{
+  margin-top:6em;
+}
+
+div#shopify-section-banner-lookbook2{
+  padding-top: 20px;
 }
