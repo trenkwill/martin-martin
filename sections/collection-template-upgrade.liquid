@@ -128,7 +128,7 @@
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
 
-      <ul class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      <ul class="grid grid--uniform">
         {% for product in collection.products %}
           <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}" style ="padding-left:7px !important;">
             {% include 'product-card-grid-upgrade', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
