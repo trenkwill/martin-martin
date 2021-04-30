@@ -1,3 +1,9 @@
+{%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
+  {%- assign locale_selector = true -%}
+  {%- assign show_selectors = true -%}
+{%- endif -%}
+
+
 {% if section.settings.message %}
   <style>
     {% if section.settings.logo != blank %}
@@ -56,8 +62,45 @@
 
   <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
+
+      <div class="grid__item medium-up--one-third">
+
+     <div class="site-header__left"> 
+            {%- if show_selectors -%}
+               {%- form 'localization', class: '', data-disclosure-form: '' -%}
+                 {%- if locale_selector -%}
+                     <span class="" id="lang-heading">
+                       {{ 'general.language.dropdown_label' | t }}
+                     </span>
+     
+                     <div class="site-header__language" data-disclosure-locale>
+                       <span class="site-header__language-title lang-{{ form.current_locale.iso_code }}" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+                         {{ form.current_locale.endonym_name }}
+                       </span>
+                       <ul id="lang-list" data-disclosure-list>
+                         {% for locale in form.available_locales %}
+                           <li class="{% if locale.iso_code == form.current_locale.iso_code %}lang--current{% endif %}">
+                             <a class="site-header__language-link " href="#" lang="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %} data-value="{{ locale.iso_code }}" data-disclosure-option>
+                               {{ locale.iso_code }}
+                             </a>
+                           </li>
+                           {% unless forloop.last %}&nbsp;/&nbsp;{% endunless %} 
+                         {%- endfor -%}
+                       </ul>
+                       <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
+                     </div>
+                 {%- endif -%}
+               {%- endform -%}
+           {%- endif -%}
+     
+             {% if section.settings.insta_link %}
+             <a href="{{ section.settings.insta_link }}" class="site-header-insta"><img src="{{'insta.svg' | asset_url }}" ></a>
+             {% endif %}
+            </div>
+        </div>
+
       {% if section.settings.align_logo == 'center' %}
-        {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
+        {%- assign logo_classes = 'grid__item medium-up--one-third logo-align--center' -%}
       {% else %}
         {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
       {% endif %}
@@ -108,7 +151,7 @@
         </nav>
       {% endif %}
 
-      <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
+      <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third {% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
         <div class="site-header__icons-wrapper">
 
           <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
@@ -131,11 +174,11 @@
           {% endif %}
 
           <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
-            {% include 'icon-cart' %}
-            <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-            <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %} critical-hidden" data-cart-count-bubble>
-              <span data-cart-count>{{ cart.item_count }}</span>
-              <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+            
+            <span>{{ 'layout.cart.title' | t }}</span>
+
+            <div id="CartCount" data-cart-count-bubble>
+              <span data-cart-count>({{ cart.item_count }})</span>
             </div>
           </a>
 
@@ -727,6 +770,39 @@
         "zh-TW": "文字"
       },
       "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": {
+        "cs": "Zobrazit selektor jazyka",
+        "da": "Vis sprogvælger",
+        "de": "Sprachauswahl anzeigen",
+        "en": "Show language selector",
+        "es": "Mostrar el selector de idioma",
+        "fi": "Näytä kielenvalitsin",
+        "fr": "Afficher le sélecteur de langue",
+        "it": "Mostra selettore lingua",
+        "ja": "言語セレクターを表示する",
+        "ko": "언어 선택기 표시",
+        "nb": "Vis språkvelger",
+        "nl": "Taalkiezer weergeven",
+        "pl": "Pokaż selektor języka",
+        "pt-BR": "Exibir seletor de idioma",
+        "pt-PT": "Mostrar seletor de idioma",
+        "sv": "Visa språkväljare",
+        "th": "แสดงตัวเลือกภาษา",
+        "tr": "Dil seçiciyi göster",
+        "vi": "Hiển thị hộp chọn ngôn ngữ",
+        "zh-CN": "显示语言选择器",
+        "zh-TW": "顯示語言選擇器"
+      },
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "insta_link",
+      "label": "Lien Instagram"
     }
   ]
 }
