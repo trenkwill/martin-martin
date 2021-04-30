@@ -972,9 +972,7 @@
             "1492096252560-1",
             "1492096252560-2"
           ],
-          "settings": {
-            "grid": 3
-          }
+          "settings": {}
         },
         "blog-template": {
           "type": "blog-template",

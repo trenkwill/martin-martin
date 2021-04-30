@@ -2070,7 +2070,7 @@ textarea {
 .site-nav__link{
 	letter-spacing:1px;
   font-weight: 600;
-	font-size: 16px;
+	font-size: 18px;
   font-family: var(--font-stack-header);}
 
 .site-nav__link.site-nav--active-dropdown {
@@ -2175,6 +2175,7 @@ body.prevent-scrolling {
 
 .page-container {
   transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+  margin-top: 7px;
   position: relative;
   overflow: hidden; }
   @media only screen and (min-width: 750px) {
@@ -3792,21 +3793,25 @@ hr {
     .site-header {
       padding: 0 55px; }
       .site-header.logo--center {
-        padding-top: 30px; } }
+        padding-top: 10px;
+         } }
 
 .site-header__logo {
   margin: 15px 0; }
   .logo-align--center .site-header__logo {
+    margin-top: -10px;
     text-align: center;
     margin: 0 auto; }
     @media only screen and (max-width: 749px) {
+      .logo-align--center {
+        flex: 1 0  140px;
+      }
       .logo-align--center .site-header__logo {
         text-align: left;
         margin: 15px 0; } }
   @media only screen and (max-width: 749px) {
     .site-header__logo {
-      padding-left: 22px;
-      text-align: left; }
+ }
       .site-header__logo img {
         margin: 0; } }
 
@@ -3839,13 +3844,14 @@ hr {
   white-space: nowrap; }
   @media only screen and (max-width: 749px) {
     .site-header__icons {
-      width: auto;
+      /*width: auto;*/
       padding-right: 13px; }
       .site-header__icons .btn--link,
       .site-header__icons .site-header__cart {
         font-size: calc(((var(--font-size-base)) / (var(--font-size-base))) * 1em); } }
 
 .site-header__icons-wrapper {
+  padding-top: 20px;
   position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3860,6 +3866,72 @@ hr {
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   justify-content: flex-end; }
+
+.site-header__cart {
+  display: flex;
+  text-transform: uppercase; 
+  font-size: 13px;
+}
+
+@media only screen and (min-width: 750px) {
+.site-header__cart svg {
+  display: none;
+}
+}
+
+#CartCount {
+  margin-left: 5px;
+}
+@media only screen and (max-width: 749px) {
+#CartCount {
+  position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    border-radius: 60px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.parenthese {
+  display: none;
+}
+}
+
+.cart-text {
+  display: none;
+}
+@media only screen and (min-width: 750px) {
+  .cart-text {
+    display: block;
+  }
+}
+.site-header-insta {
+  display: none;
+}
+@media only screen and (min-width: 750px) {
+  .site-header-insta {
+    display: block;
+  }
+}
+
+
+@media only screen and (max-width: 749px) {
+.wk-link {
+  display: none !important;
+}
+}
+.wk-link .wk-label{
+  display: none;
+}
+a.wk-link .wk-icon {
+  width: 35px !important;
+  height: 23px !important;
+  margin-top: 1px;
+}
 
 .site-header__cart,
 .site-header__search,
@@ -3934,12 +4006,63 @@ hr {
   .site-header__icon {
     display: inline-block;
     vertical-align: middle;
-    padding: 10px 11px;
+    padding: 10px 5px;
     margin: 0; } }
 
 @media only screen and (min-width: 750px) {
   .site-header__icon .icon-search {
     margin-right: 3px; } }
+
+@media only screen and (min-width: 750px) {
+.site-header__left {
+  display: flex;
+  margin: 20px 0 0 23px;
+}
+}
+
+
+
+.site-header__language {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#lang-list  {
+  display: flex;
+  text-transform: uppercase;
+  margin-right: 23px;
+  font-size: 13px;
+}
+#lang-heading {
+  display: none;
+}
+
+
+@media only screen and (max-width: 749px) {
+  .site-header__language {
+    display: none;
+  }
+}
+.site-header__language span{
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  height: 100%;
+  width: 100%;
+}
+.site-header__language .site-header__language-title {
+  display: none;
+}
+
+
+#shopify-section-testimonials:last-child {
+    margin-bottom: -55px;
+}
+#shopify-section-logo-bar-auto {
+    margin-bottom: -107px;
+}
+
+
 
 .announcement-bar {
   z-index: 10;
@@ -6951,6 +7074,12 @@ hr {
   max-height: 300px;
   overflow-y: auto;
   border-radius: 2px; }
+
+.disclosure-list--bottom {
+  bottom: inherit;
+  top: 35px;
+  left: 0px
+}
 
 .disclosure-list--visible {
   display: block; }
