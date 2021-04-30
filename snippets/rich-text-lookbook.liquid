@@ -1,0 +1,15 @@
+<div class="div-center-lkb rich-text">
+  <div class="grid">
+    <div class="grid__item-center">
+      {% if section.settings.section_title != blank %}
+        <div class="rich-text__heading--small text-center">
+          <h2 class="h3-richtext_lkb">{{ section.settings.section_title | escape }}</h2>
+        </div>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="rich-text__text-lkb1 rte-setting text-center">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>

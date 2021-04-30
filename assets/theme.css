@@ -2170,7 +2170,7 @@ body.prevent-scrolling {
       padding-left: 20px;
       padding-right: 20px; } }
 
-.page-width-lookbook {
+.page-width-large {
   max-width: 1600px; }
 
 .page-container {
@@ -2370,7 +2370,7 @@ hr {
     margin-bottom: 0; }
 
 .grid-view-item-upgrade {
-  margin: 0 0 15px; }
+  margin: 0; }
   .custom__item .grid-view-item-upgrade {
     margin-bottom: 0; }
 
@@ -2420,7 +2420,7 @@ hr {
   display:block;
   margin: 0 auto;
   position: relative;
-  height: 416px;
+  height: 525px;
   margin-bottom: 12px;
   object-fit: cover;
   width: 100%;}
@@ -3250,7 +3250,7 @@ hr {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 458px;
   opacity: 1; }
   @media only screen and (max-width: 749px) {
     .collection-hero__image {
@@ -3274,12 +3274,13 @@ hr {
   left: 0;
   right: 0;
   top: 50%;
+  text-transform: uppercase;
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
   @media only screen and (min-width: 750px) {
     .collection-hero__title {
-      font-size: calc(((var(--font-size-header) + 6) / (var(--font-size-base))) * 1em); } }
+      font-size: 35px; } }
 
 .template-blog .social-sharing {
   margin-bottom: 17.5px; }
@@ -5484,16 +5485,17 @@ hr {
 
 /*================ Module | Filters and Sort toolbar and selection ================*/
 .filters-toolbar-wrapper {
-  margin-bottom: 22px; }
+  margin-bottom: 0px; }
   @media only screen and (min-width: 750px) {
     .filters-toolbar-wrapper {
-      margin-bottom: 55px; } }
+      margin-bottom: 0px; } }
 
 .filters-toolbar {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  margin-top: 48px;
   -ms-flex-align: center;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -7119,53 +7121,98 @@ hr {
 
 /*Title*/
 .grid__item-center {
-  padding:0;}
+  padding: 0}
 
 .div-center-lookbook{
-  padding-left: 10em;
-  padding-right: 10em;
+  padding: 0 10em 0
 }
 
 @media only screen and (max-width: 749px){
   .div-center-lookbook{
-    padding-left:10px;
-    padding-right:10px;
+  padding: 0 10px 0
   }
 }
 .rich-text__text-lkb{
   font-size: 13px;
   margin-top: 27px;
   line-height: 21px;
-  padding-left: 50Px;
-  padding-right: 50px;
+  padding: 0 50px 0
   text-transform: uppercase;}
 
 /*Rich Text 1*/
 .div-center-lkb{
-  padding-left: 21em;
-  padding-right: 21em;}
+  padding: 0 21em 0}
 
 .rich-text__text-lkb1 {
   font-size: 14px;
   margin-top: 27px;
   line-height: 24px;
-  padding-left: 25Px;
-  padding-right: 25px;}
+  padding: 0 25px 0}
 
 .h3-richtext_lkb{
   line-height: 35px;
   font-size: 25px;
-  padding-left: 142px;
-  padding-right: 142px;
+  padding: 0 142px 0;
   letter-spacing: 1px;}
 
 /*Images 1*/
 .img-lookbook {
-  max-height: 1000Px;}
+  max-width: 695px;
+  object-fit: cover;
+  position: relative;
+  left: -146px;}
+
+.img-lookbook2 {
+  max-width: 459px;
+  object-fit: cover;
+  position: relative;
+  left: -17px;
+  top: -213px;}
 
 .custom-content-lookbook{
    max-height: 1000Px;}
-}
+
+/*Images 2*/
+.img-lookbook3 {
+    max-width: 462px;
+    object-fit: cover;
+    position: relative;
+    left: -112px;
+    bottom: 196px;}
+
+.img-lookbook4 {
+    max-height: 794px;
+    object-fit: cover;
+    position: relative;
+    left: 33px;
+    top: -30px;}
+
+.img-lookbook5 {
+  max-width: 585px;
+  object-fit: cover;
+  position: relative;
+  left: -26px;}
+
+/*Rich text 3*/
+.rich-text__text--lkb3{
+  padding-right: 195px;
+  padding-left: 195px;
+  text-transform: uppercase;}
+
+  /*Images 3*/
+.img-lookbook6 {
+    max-height: 685px;
+    object-fit: cover;
+    position: relative;
+    left: -29px;
+    top: -120px;}
+
+.img-lookbook7 {
+    max-width: 690px;
+    object-fit: cover;
+    position: relative;
+    left: 104px;
+    bottom: -48px;}
 
 /*================ Section About ================*/
 
@@ -7245,6 +7292,11 @@ hr {
   width: 92%;
   line-height: 25px;}
 
+
+/*================ COLLECTION ================*/
+.grid__item-upgrade {
+  padding: 13px 8px 0}
+
 /*================ DIV ================*/
 
 div#shopify-section-custom-content-about {
@@ -7307,4 +7359,20 @@ div#shopify-section-custom-content-lookbook{
   padding:0;
   margin-top:12px;
   height: 186vh;
+}
+
+div#shopify-section-rich-text-lookbook2{
+  padding-top: 90px;
+}
+
+div#shopify-section-custom-content-lookbook2{
+  max-height: 1807Px;
+}
+
+div#shopify-section-rich-text-lookbook3{
+  margin-top:6em;
+}
+
+div#shopify-section-banner-lookbook2{
+  padding-top: 20px;
 }

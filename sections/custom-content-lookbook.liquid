@@ -16,15 +16,13 @@
               {% endif %}
               {% if section.settings.image != blank %}
                  {% capture image_size %}{% endcapture %}
-                  {{ section.settings.image2 | img_url: image_size, scale: 2, crop: 'top' | img_tag: section.settings.image.alt, 'img-lookbook' }}
+                  {{ section.settings.image2 | img_url: image_size, scale: 2, crop: 'top' | img_tag: section.settings.image.alt, 'img-lookbook2' }}
               {% else %}
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               {% endif %}
         </div>
       </div>
   </div>
-
-
 
 {% schema %}
 {
