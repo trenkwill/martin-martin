@@ -247,7 +247,7 @@
   </header>
 
   {% if section.settings.align_logo == 'center' %}
-  <nav class="small--hide border-bottom" id="AccessibleNav" role="navigation">
+  <nav class="small--hide" id="AccessibleNav" role="navigation">
     {% include 'site-nav', linklist: section.settings.main_linklist %}
   </nav>
   {% endif %}
@@ -457,7 +457,7 @@
         "zh-TW": "自訂商標寬度"
       },
       "min": 50,
-      "max": 250,
+      "max": 340,
       "step": 5,
       "unit": "px",
       "default": 100

@@ -2070,7 +2070,7 @@ textarea {
 .site-nav__link{
 	letter-spacing:1px;
   font-weight: 600;
-	font-size: 16px;
+	font-size: 18px;
   font-family: var(--font-stack-header);}
 
 .site-nav__link.site-nav--active-dropdown {
@@ -2175,6 +2175,7 @@ body.prevent-scrolling {
 
 .page-container {
   transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+  margin-top: 7px;
   position: relative;
   overflow: hidden; }
   @media only screen and (min-width: 750px) {
@@ -3792,7 +3793,8 @@ hr {
     .site-header {
       padding: 0 55px; }
       .site-header.logo--center {
-        padding-top: 30px; } }
+        padding-top: 20px;
+        margin-bottom: 10px; } }
 
 .site-header__logo {
   margin: 15px 0; }
