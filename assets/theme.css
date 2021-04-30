@@ -3799,16 +3799,19 @@ hr {
 .site-header__logo {
   margin: 15px 0; }
   .logo-align--center .site-header__logo {
+    margin-top: -10px;
     text-align: center;
     margin: 0 auto; }
     @media only screen and (max-width: 749px) {
+      .logo-align--center {
+        flex: 1 0  140px;
+      }
       .logo-align--center .site-header__logo {
         text-align: left;
         margin: 15px 0; } }
   @media only screen and (max-width: 749px) {
     .site-header__logo {
-      padding-left: 22px;
-      text-align: left; }
+ }
       .site-header__logo img {
         margin: 0; } }
 
@@ -3841,13 +3844,14 @@ hr {
   white-space: nowrap; }
   @media only screen and (max-width: 749px) {
     .site-header__icons {
-      width: auto;
+      /*width: auto;*/
       padding-right: 13px; }
       .site-header__icons .btn--link,
       .site-header__icons .site-header__cart {
         font-size: calc(((var(--font-size-base)) / (var(--font-size-base))) * 1em); } }
 
 .site-header__icons-wrapper {
+  padding-top: 10px;
   position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3868,8 +3872,65 @@ hr {
   text-transform: uppercase; 
   font-size: 13px;
 }
+
+@media only screen and (min-width: 750px) {
+.site-header__cart svg {
+  display: none;
+}
+}
+
 #CartCount {
   margin-left: 5px;
+}
+@media only screen and (max-width: 749px) {
+#CartCount {
+  position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    border-radius: 60px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.parenthese {
+  display: none;
+}
+}
+
+.cart-text {
+  display: none;
+}
+@media only screen and (min-width: 750px) {
+  .cart-text {
+    display: block;
+  }
+}
+.site-header-insta {
+  display: none;
+}
+@media only screen and (min-width: 750px) {
+  .site-header-insta {
+    display: block;
+  }
+}
+
+
+@media only screen and (max-width: 749px) {
+.wk-link {
+  display: none !important;
+}
+}
+.wk-link .wk-label{
+  display: none;
+}
+a.wk-link .wk-icon {
+  width: 35px !important;
+  height: 23px !important;
+  margin-top: 1px;
 }
 
 .site-header__cart,
@@ -3945,16 +4006,18 @@ hr {
   .site-header__icon {
     display: inline-block;
     vertical-align: middle;
-    padding: 10px 11px;
+    padding: 10px 5px;
     margin: 0; } }
 
 @media only screen and (min-width: 750px) {
   .site-header__icon .icon-search {
     margin-right: 3px; } }
 
+@media only screen and (min-width: 750px) {
 .site-header__left {
   display: flex;
   margin: 20px 0 0 23px;
+}
 }
 
 
