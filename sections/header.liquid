@@ -4,6 +4,8 @@
 {%- endif -%}
 
 
+
+
 {% if section.settings.message %}
   <style>
     {% if section.settings.logo != blank %}
@@ -65,7 +67,7 @@
 
       <div class="grid__item medium-up--one-third">
 
-     <div class="site-header__left"> 
+     <div class="site-header__left">
       {% unless linklists[section.settings.main_linklist] == blank %}
         <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
           {% include 'icon-hamburger' %}
@@ -78,7 +80,7 @@
                      <span class="" id="lang-heading">
                        {{ 'general.language.dropdown_label' | t }}
                      </span>
-     
+
                      <div class="site-header__language" data-disclosure-locale>
                        <span class="site-header__language-title lang-{{ form.current_locale.iso_code }}" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
                          {{ form.current_locale.endonym_name }}
@@ -90,7 +92,7 @@
                                {{ locale.iso_code }}
                              </a>
                            </li>
-                           {% unless forloop.last %}&nbsp;/&nbsp;{% endunless %} 
+                           {% unless forloop.last %}&nbsp;/&nbsp;{% endunless %}
                          {%- endfor -%}
                        </ul>
                        <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
@@ -98,9 +100,9 @@
                  {%- endif -%}
                {%- endform -%}
            {%- endif -%}
-     
+
              {% if section.settings.insta_link %}
-             <a href="{{ section.settings.insta_link }}" class="site-header-insta"><img src="{{'insta.svg' | asset_url }}" ></a>
+             <a href="{{ section.settings.insta_link }}" class="site-header-insta" target="_blank"><img src="{{'insta.svg' | asset_url }}" ></a>
              {% endif %}
             </div>
         </div>
@@ -192,7 +194,7 @@
           {% endif %}
 
           <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
-            
+
             {% include 'icon-cart' %}
 
             <span class="cart-text">{{ 'layout.cart.title' | t }}</span>
@@ -202,7 +204,7 @@
             </div>
           </a>
 
-          
+
         </div>
 
       </div>

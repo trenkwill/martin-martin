@@ -57,7 +57,7 @@
     {%- else -%}
       {%- assign image_overlay_opacity_hover = image_overlay_opacity | plus: 0.4 -%}
     {%- endif -%}
-    --hover-overlay-opacity: {{ image_overlay_opacity_hover | at_most: 1 }};
+    --hover-overlay-opacity: {{ image_overlay_opacity_hover | at_most: 0.3 }};
 
     --color-border: {{ settings.color_borders }};
     --color-border-form: {{ settings.color_text_field_border }};
