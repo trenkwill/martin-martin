@@ -17,7 +17,10 @@
 
 {% paginate collection.products by limit %}
 
-<div data-section-id="{{ section.id }}" data-section-type="collection-template">
+<div data-section-id="{{ section.id }}" data-section-type="collection-template" class="{% unless section.settings.show_collection_image and collection.image %}push-content{% endunless %}">
+  {% unless section.settings.show_collection_image and collection.image %}
+    <div class="page-width">{% render 'breadcrumbs' %}</div>
+    {% endunless %}
   <header class="collection-header">
     {%- assign is_filter_by_available = false -%}
     {%- if section.settings.tags_enable and collection.all_tags.size > 0 -%}
@@ -33,7 +36,7 @@
              data-image-loading-animation
         ></div>
         <noscript>
-          <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
+          <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'center' }});"></div>
         </noscript>
         <div class="collection-hero__title-wrapper">
           <h1 class="collection-hero__title page-width">
@@ -54,6 +57,7 @@
       {% endif %}
     {% else %}
       <div class="page-width">
+
         <div class="section-header text-center">
           <h1>
               <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
@@ -69,6 +73,10 @@
           {% endif %}
         </div>
       </div>
+    {% endif %}
+
+    {% if section.settings.show_collection_image and collection.image %}
+    <div class="page-width">{% render 'breadcrumbs' %}</div>
     {% endif %}
 
     {% if is_filter_by_available or section.settings.sort_enable %}
