@@ -1,0 +1,139 @@
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <ul class="logo-bar{% if section.settings.title_enable %} logo-bar--large{% endif %}">
+      {% for block in section.blocks %}
+        <li class="logo-bar__item{% if section.settings.title_enable %} logo-bar__item--large{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+          {% else %}
+            {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+           <div class="text-center" style="margin-top:15px;">
+      		<h4 style="font-size: 15px; letter-spacing: 1px;">{{ block.settings.subtitle | escape }}</h4>
+             <p style="font-size: 13px;">{{ block.settings.content | escape }}</p>
+   			</div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</div>
+
+
+
+{% schema %}
+{
+  "name": {
+    "cs": "Seznam log",
+    "da": "Logoliste",
+    "de": "Logo-Liste",
+    "en": "Logo list",
+    "es": "Lista de logos",
+    "fi": "Logoluettelo",
+    "fr": "Liste des logos",
+    "it": "Elenco loghi",
+    "ja": "ロゴリスト",
+    "ko": "로고 목록",
+    "nb": "Logoliste",
+    "nl": "Logolijst",
+    "pl": "Lista logo",
+    "pt-BR": "Lista de logos",
+    "pt-PT": "Lista de logótipos",
+    "sv": "Logotyplista",
+    "th": "รายการโลโก้",
+    "tr": "Logo listesi",
+    "vi": "Danh sách logo",
+    "zh-CN": "logo 列表",
+    "zh-TW": "標誌清單"
+  },
+  "class": "index-section",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "cs": "Nadpis",
+        "da": "Overskrift",
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fi": "Otsake",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "ko": "제목",
+        "nb": "Overskrift",
+        "nl": "Kop",
+        "pl": "Nagłówek",
+        "pt-BR": "Título",
+        "pt-PT": "Título",
+        "sv": "Rubrik",
+        "th": "ส่วนหัว",
+        "tr": "Başlık",
+        "vi": "Tiêu đề",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "cs": "Seznam log",
+        "da": "Logoliste",
+        "de": "Logo-Liste",
+        "en": "Logo list",
+        "es": "Lista de logos",
+        "fi": "Logoluettelo",
+        "fr": "Liste de logos",
+        "it": "Elenco loghi",
+        "ja": "ロゴリスト",
+        "ko": "로고 목록",
+        "nb": "Logoliste",
+        "nl": "Logolijst",
+        "pl": "Lista logo",
+        "pt-BR": "Lista de logos",
+        "pt-PT": "Lista de logótipos",
+        "sv": "Logotyplista",
+        "th": "รายการโลโก้",
+        "tr": "Logo listesi",
+        "vi": "Danh sách logo",
+        "zh-CN": "logo 列表",
+        "zh-TW": "標誌清單"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo_image",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Titre"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Message"
+        }
+      ]
+    }
+  ],
+  "presets": [
+
+  ]
+}
+{% endschema %}

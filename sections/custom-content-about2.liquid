@@ -1,0 +1,112 @@
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h4 class="h2">{{ section.settings.title | escape }}</h4>
+    </div>
+  {% endif %}
+
+  <div class="custom-content">
+
+      <div class="custom__item custom__item--image custom__item--image align--center">
+        <div class="custom__item-inner custom__item-inner--image" id="{{ img_wrapper_id }}">
+              {% if section.settings.image != blank %}
+                 {% capture image_size %}{% endcapture %}
+                  {{ section.settings.image | img_url: image_size, scale: 2, crop: 'top' | img_tag: section.settings.image.alt, 'img-lookbook' }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+        </div>
+      </div>
+  </div>
+
+
+
+{% schema %}
+{
+  "name": "Image",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "cs": "Nadpis",
+        "da": "Overskrift",
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fi": "Otsake",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "ko": "제목",
+        "nb": "Overskrift",
+        "nl": "Kop",
+        "pl": "Nagłówek",
+        "pt-BR": "Título",
+        "pt-PT": "Título",
+        "sv": "Rubrik",
+        "th": "ส่วนหัว",
+        "tr": "Başlık",
+        "vi": "Tiêu đề",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "cs": "Vlastní obsah",
+        "da": "Tilpasset indhold",
+        "de": "Personalisierter Content",
+        "en": "Custom content",
+        "es": "Contenido personalizado",
+        "fi": "Mukautettu sisältö",
+        "fr": "Contenu personnalisé",
+        "it": "Contenuto personalizzato",
+        "ja": "コンテンツをカスタムする",
+        "ko": "사용자 지정 콘텐츠",
+        "nb": "Tilpasset innhold",
+        "nl": "Aangepaste content",
+        "pl": "Zawartość niestandardowa",
+        "pt-BR": "Conteúdo personalizado",
+        "pt-PT": "Conteúdo personalizado",
+        "sv": "Anpassat innehåll",
+        "th": "เนื้อหาแบบกำหนดเอง",
+        "tr": "Özel içerik",
+        "vi": "Nội dung tùy chỉnh",
+        "zh-CN": "自定义内容",
+        "zh-TW": "自訂內容"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image1"
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "cs": "Vlastní obsah",
+        "da": "Tilpasset indhold",
+        "de": "Personalisierter Content",
+        "en": "Custom content",
+        "es": "Contenido personalizado",
+        "fi": "Mukautettu sisältö",
+        "fr": "Contenu personnalisé",
+        "it": "Contenuto personalizzato",
+        "ja": "コンテンツをカスタムする",
+        "ko": "사용자 지정 콘텐츠",
+        "nb": "Tilpasset innhold",
+        "nl": "Aangepaste content",
+        "pl": "Zawartość niestandardowa",
+        "pt-BR": "Conteúdo personalizado",
+        "pt-PT": "Conteúdo personalizado",
+        "sv": "Anpassat innehåll",
+        "th": "เนื้อหาแบบกำหนดเอง",
+        "tr": "Özel içerik",
+        "vi": "Nội dung tùy chỉnh",
+        "zh-CN": "自定义内容",
+        "zh-TW": "自訂內容"
+      }
+    }
+  ]
+}
+{% endschema %}
