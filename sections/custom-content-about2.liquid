@@ -4,17 +4,17 @@
     </div>
   {% endif %}
 
-  
+
 
     <div class="img-lookbook-wrap" id="{{ img_wrapper_id }}">
           {% if section.settings.image != blank %}
              {% capture image_size %}{% endcapture %}
-              {{ section.settings.image | img_url: image_size, scale: 2, crop: 'top' | img_tag: section.settings.image.alt, 'img-lookbook' }}
+              {{ section.settings.image | img_url: image_size, scale: 2, crop: 'top' | img_tag: section.settings.image.alt, 'about-3images' }}
           {% else %}
             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
           {% endif %}
     </div>
-  
+
 
 
 

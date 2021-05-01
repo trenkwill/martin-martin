@@ -6,12 +6,12 @@
   {% endif %}
 
 
-  <div class="custom-content custom-content-about2">
+  <div class="custom-content custom-content-about3">
     {%- assign block_width_mobile = '' -%}
 
       {% for block in section.blocks %}
-      <div class="medium--one-third custom__item custom__item--{{ block.type }} custom__item--{{ block.id }} {% if block.settings.alignment %} {% endif %}" {{ block.shopify_attributes }}>
-        <div class="custom__item-inner custom__item-inner--{{ block.type }}"
+      <div class=" small--one-whole one-third custom__item custom__item--{{ block.type }} custom__item--{{ block.id }} {% if block.settings.alignment %} {% endif %}" {{ block.shopify_attributes }}>
+        <div class="custom__item-inner custom__item-inner--{{ block.type }} "
         {% if block.type == 'image' %} id="{{ img_wrapper_id }}" style="text-align: right;"{% endif %}>
           {% case block.type %}
             {% when 'image' %}
