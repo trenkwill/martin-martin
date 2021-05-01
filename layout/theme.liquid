@@ -219,12 +219,15 @@
             0:{
                 items:1
             },
-            749:{
+            800:{
                 items:2
             }
         }
       });
     });
+
+
+
   </script>
   {% if settings.app_wk_enabled %}
   {% include 'appmate-wishlist-king' %}
@@ -235,7 +238,7 @@
 </script>
 
 <script>
-    $(window).scroll(function() {    
+    $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         if (scroll > 200) {
             $("#shopify-section-header").addClass("sticky-hide");
