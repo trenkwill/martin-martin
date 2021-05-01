@@ -10,10 +10,7 @@
 {% endcomment %}
 
 <div class="grid-view-item-upgrade {% unless product.available %} grid-view-item--sold-out{% endunless %} product-card">
-  <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="{{ product.url }}">
     <span class="visually-hidden">{{ product.title }}</span>
-  </a>
-  <!-- include 'wishlist-button-collection' with '{{ product.id }}' -->
 
   {% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
   {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
@@ -21,6 +18,12 @@
   {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
     {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
-    <img class="grid-view-item__image-upgrade" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt }}">
+    <img class="grid-view-item__image-upgrade grid-view-item__image-upgrade-first" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt }}">
+    <div class="grid-view-item__image-upgrade grid-view-item__image-upgrade-second">
+      <h3>{{ product.metafields.global.mannequin-nom }}</h3>
+      <p class="mannequin-description">{{ product.metafields.global.mannequin-description }}</p>
+      <p class="mannequin-lieu">{{ product.metafields.global.mannequin-lieu }}</p>
+      <a href="{{ product.url | within: collection }}">En voir plus</a>
+    </div>
 
 </div>

@@ -40,7 +40,9 @@
       {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
 
       {%- for media in product.media -%}
+        {% unless media.alt contains "porte" %}
         {% include 'media', media: media, featured_media: featured_media, height: height, enable_image_zoom: enable_image_zoom, image_zoom_size: product_image_zoom_size, image_scale: product_image_scale %}
+        {% endunless %}
       {%- endfor -%}
 
       <noscript>
@@ -84,6 +86,7 @@
               {% endif %}
 
               {% for media in product.media %}
+                {% unless media.alt contains "porte" %}
                 <li class="product-single__thumbnails-item product-single__thumbnails-item--{{ section.settings.media_size }} {% if enable_thumbnail_slides == true %} product-single__thumbnails-item-slide{% endif %} js"{% if enable_thumbnail_slides == true %} data-slider-slide-index="{{ forloop.index0 }}" data-slider-item{% endif %}>
                   <a href="{{ media.preview_image | img_url: product_image_zoom_size, scale: product_image_scale }}"
                     class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
@@ -114,6 +117,7 @@
                       {%- endif -%}
                   </a>
                 </li>
+                {% endunless %}
               {% endfor %}
 
               {% if enable_thumbnail_slides == true %}
@@ -271,8 +275,24 @@
         </div>
 
         <div class="product-single__description rte">
-          {{ product.description }}
-        </div>
+                {% assign description = product.description | split:'---' %}
+                {% assign general = description[0] %}
+                {% assign detail = description[1] %}
+                {% assign livraison = description[2] %}
+                {% assign entretien = description[3] %}
+
+                {{ general }}
+
+                <button class="accordion active">detail {% include 'icon-chevron-down' %}</button>
+                <div class="panel" style="max-height: inherit">{{ detail }}</div>
+
+                <button class="accordion">Livraison et retour {% include 'icon-chevron-down' %}</button>
+                <div class="panel">{{ livraison }}</div>
+
+                <button class="accordion">entretien {% include 'icon-chevron-down' %}</button>
+                <div class="panel">{{ entretien }}</div>
+                
+              </div>
 
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
@@ -291,6 +311,52 @@
 {% endunless %}
 
 
+
+<div class="page-width">
+  <div class="product-extra-images">
+  {%- if section.settings.heading_porte != blank -%}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.heading_porte | escape }}</h2>
+    </div>
+  {%- endif -%}
+  <ul class="grid grid--uniform">
+
+
+    {%- for media in product.media -%}
+      {% case media.media_type %}
+            {% when 'image' %}
+              {% if media.alt contains "porte" %}
+                <li class="grid__item small--one-half medium-up--one-quarter">
+                  
+                  <div class="grid-view-item product-card">
+                    {{ media | media_tag: class: 'media-item', image_size: image_size }}
+                  </div>
+                </li>
+              {% endif %}
+            {% endcase %}
+    {%- endfor -%}
+  </ul>
+</div>
+</div>
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 {% schema %}
 {
@@ -318,6 +384,12 @@
     "zh-TW": "產品頁面"
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "heading_porte",
+      "label": "Titre de la section porté",
+      "default": "Elles l’ont portée"
+    },
     {
       "type": "checkbox",
       "id": "show_quantity_selector",

@@ -45,7 +45,8 @@
           "home_page_only": true,
           "message_text": "Annoncez quelque chose ici",
           "color_bg": "#3a3a3a",
-          "color_text": "#ffffff"
+          "color_text": "#ffffff",
+          "show_locale_selector": true
         }
       },
       "hero-1": {
@@ -433,36 +434,6 @@
       },
       "custom-content-about2": {
         "type": "custom-content-about2",
-        "blocks": {
-          "291a0d65-1570-46cf-8943-5ee0dac9f0a4": {
-            "type": "text",
-            "settings": {
-              "title": "À travers ses vestes, Capucine veut souligner la dualité présente chez chaque femme.",
-              "text": "<p>La femme Martin Martin du jour est ambitieuse, passionnée et soignée. La femme Martin Martin du soir est excentrique, légère et décomplexée.                                 <br\/>Et comme un hommage à ses premières émotions de mode, elles ont toutes pour signature un bouton bombé en or 18 carat inspiré du bouton de la veste phare de sa grand-mère.<\/p>",
-              "alignment": "center",
-              "align_text": "left"
-            }
-          },
-          "2496a9b3-8bb7-44cd-99b9-64deb6f784c5": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/A_proposbis.jpg",
-              "alignment": "center"
-            }
-          },
-          "c80fddd9-cc70-4717-b784-3d0398d3addb": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
-              "alignment": "center"
-            }
-          }
-        },
-        "block_order": [
-          "291a0d65-1570-46cf-8943-5ee0dac9f0a4",
-          "2496a9b3-8bb7-44cd-99b9-64deb6f784c5",
-          "c80fddd9-cc70-4717-b784-3d0398d3addb"
-        ],
         "settings": {
           "title": ""
         }
@@ -473,7 +444,6 @@
           "44e6a1a5-bdab-407e-8525-e0aec053c578": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
               "alignment": "center",
               "cta_label": ""
             }
@@ -481,7 +451,6 @@
           "0dce2a09-8de1-42e4-b3ec-c8c686a509d2": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
               "alignment": "center",
               "cta_label": ""
             }
@@ -489,7 +458,6 @@
           "84ceb1e4-4c16-455a-89b5-b8636aa4adc3": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
               "alignment": "center",
               "cta_label": ""
             }
@@ -542,46 +510,7 @@
       "custom-content-lookbook": {
         "type": "custom-content-lookbook",
         "settings": {
-          "title": "",
-          "image": "shopify:\/\/shop_images\/Robes.jpg",
-          "image2": "shopify:\/\/shop_images\/Capture_d_ecran_2021-04-27_a_11.05.01.png"
-        }
-      },
-      "custom-content-lookbook2": {
-        "type": "custom-content-lookbook2",
-        "blocks": {
-          "277a6ffc-5d18-4bad-9315-8f9bf19244e7": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
-              "width": "33%",
-              "alignment": "center"
-            }
-          },
-          "56eeba4a-da5e-46ce-9287-d276f7028e8e": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
-              "width": "50%",
-              "alignment": "center"
-            }
-          },
-          "f99426c8-3c2a-471d-92f3-ecdad869a483": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
-              "width": "75%",
-              "alignment": "center"
-            }
-          }
-        },
-        "block_order": [
-          "277a6ffc-5d18-4bad-9315-8f9bf19244e7",
-          "56eeba4a-da5e-46ce-9287-d276f7028e8e",
-          "f99426c8-3c2a-471d-92f3-ecdad869a483"
-        ],
-        "settings": {
-          "title": "Contenu personnalisé"
+          "title": ""
         }
       },
       "rich-text-lookbook3": {
@@ -591,34 +520,6 @@
           "section_title": "CES PIÈCES SONT PENSÉES POUR ALLIER L’ÉLÉGANCE, LE GLAMOUR AU SUSTAINABLE.",
           "text": "<p>CETTE COLLECTION EST consectetur adipiscing elit. Integer ut aliquet magna. Suspendisse nec consectetur dolor, a vulputate felis. Etiam pharetra laoreet velit sit amet porta. Aliquam erat volutpat. Nunc eget aliquam enim. Donec dictum suscipit tristique. Nam cursus metus et mi dignissim scelerisque. Fusce finibus sem a mattis dictum. Aliquam laoreet odio ipsum, <\/p>",
           "text_size": "small"
-        }
-      },
-      "custom-content-lookbook3": {
-        "type": "custom-content-lookbook3",
-        "blocks": {
-          "1a8d1c06-ce17-4478-a481-6da0d506098f": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
-              "width": "33%",
-              "alignment": "center"
-            }
-          },
-          "ff463010-f06f-4cc7-9c08-50806518c659": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/young-woman-doing-yoga-outside.jpg",
-              "width": "50%",
-              "alignment": "center"
-            }
-          }
-        },
-        "block_order": [
-          "1a8d1c06-ce17-4478-a481-6da0d506098f",
-          "ff463010-f06f-4cc7-9c08-50806518c659"
-        ],
-        "settings": {
-          "title": ""
         }
       },
       "collection-template-upgrade": {
@@ -642,6 +543,42 @@
           "show_vendor": false,
           "sort_enable": true,
           "tags_enable": true
+        }
+      },
+      "custom-content-about3": {
+        "type": "custom-content-about3",
+        "blocks": {
+          "f89c432c-c1af-446e-acab-948cfeb94a55": {
+            "type": "text",
+            "settings": {
+              "title": "À travers ses vestes, Capucine veut souligner la dualité présente chez chaque femme.",
+              "text": "<p>La femme Martin Martin du jour est ambitieuse, passionnée et soignée. La femme Martin Martin du soir est excentrique, légère et décomplexée.Et comme un hommage à ses premières émotions de mode, elles ont toutes pour signature un bouton bombé en or 18 carat inspiré du bouton de la veste phare de sa grand-mère.<\/p>",
+              "alignment": "center",
+              "align_text": "left"
+            }
+          },
+          "66a1fecc-464c-4139-bfb8-98f013eb7140": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/lookbook-6.jpg",
+              "alignment": "center"
+            }
+          },
+          "eb668609-d9fb-4807-8cbc-83f88930f09a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/lookbook-6.jpg",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "f89c432c-c1af-446e-acab-948cfeb94a55",
+          "66a1fecc-464c-4139-bfb8-98f013eb7140",
+          "eb668609-d9fb-4807-8cbc-83f88930f09a"
+        ],
+        "settings": {
+          "title": ""
         }
       }
     },

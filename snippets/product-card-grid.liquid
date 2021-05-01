@@ -11,8 +11,8 @@
     {% include 'product-card-grid-upgrade', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
-<div class="grid-view-item-upgrade {% unless product.available %} grid-view-item--sold-out{% endunless %} product-card">
-  <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="{{ product.url }}">
+<div class="grid-view-item {% unless product.available %} grid-view-item--sold-out{% endunless %} product-card">
+  <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="{{ product.url | within: collection }}">
     <span class="visually-hidden">{{ product.title }}</span>
   </a>
   <!-- include 'wishlist-button-collection' with '{{ product.id }}' -->
@@ -23,10 +23,14 @@
   {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
     {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
-    <img class="grid-view-item__image-upgrade" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt }}">
+    <img class="grid-view-item__image grid-view-item__image-first" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt }}">
+
+    <img class="grid-view-item__image grid-view-item__image-second" src="{{ product.images[1] | product_img_url: 'large' }}" alt="{{ product.images[1].alt | escape }}" />
   
     <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
 
-  {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
+    {% if show_price == true %}
+      {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
+    {% endif %}
 
 </div>
