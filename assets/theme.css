@@ -1115,6 +1115,10 @@ textarea {
   letter-spacing: -5px;
   margin-bottom: -10px;}
 
+  @media only screen and (max-width: 750px) {
+    .header-nude {
+      font-size: 20px;} }
+
 .header-upgrade{
   font-size: 28px;
   letter-spacing: 5px;
@@ -1134,7 +1138,7 @@ textarea {
   margin-bottom: 35px; }
   @media only screen and (min-width: 750px) {
     .section-header {
-      margin-bottom: 55px; } }
+      margin-top: 12px; } }
 
 /*================ Typography ================*/
 blockquote {
@@ -2408,6 +2412,11 @@ hr {
   object-fit: cover;
   width: 100%; }
 
+   @media only screen and (max-width: 749px) {
+    .grid-view-item__image {
+     height: 238px;
+     margin-bottom: 7px} }
+
 .grid-view-item__image-second {
   display: none;
 }
@@ -2854,7 +2863,8 @@ hr {
   overflow-anchor: none; }
 
 .product-single__title {
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  text-transform: uppercase; }
 
 .product__price,
 .featured-product__price {
@@ -3016,7 +3026,8 @@ hr {
     max-width: 300px; } }
 
 .product-single__description {
-  margin-top: 30px; }
+  margin-top: 30px;
+  text-transform:uppercase; }
 
 .product__quantity-error .icon {
   margin-right: 1rem; }
@@ -3037,7 +3048,9 @@ hr {
   max-width: 100%;
   display: block;
   margin: 0 auto;
-  padding: 2px; }
+  padding: 2px;
+  min-height: 762px;
+  object-fit: cover;}
 
 .product-single__thumbnail-badge {
   width: 22px;
@@ -3211,7 +3224,8 @@ hr {
 
 .product-single__thumbnails-item {
   flex: 0 0 25%;
-  padding-left: 5px; }
+  padding-left: 5px;
+  max-height: 780px; }
   @media only screen and (max-width: 749px) {
     .product-single__thumbnails-item.slick-slide {
       padding-bottom: 10px;
@@ -3240,23 +3254,23 @@ hr {
 
 @media only screen and (min-width: 990px) {
   .product-single__thumbnails-item--small {
-    flex: 0 0 33.33333%; } }
+    flex: 0 0 50%; } }
 
 @media only screen and (min-width: 750px) {
   .product-single__thumbnails-item--medium {
-    flex: 0 0 33.33333%; } }
+    flex: 0 0 50%%; } }
 
 @media only screen and (min-width: 990px) {
   .product-single__thumbnails-item--medium {
-    flex: 0 0 25%; } }
+    flex: 0 0 50%; } }
 
 @media only screen and (min-width: 750px) {
   .product-single__thumbnails-item--large {
-    flex: 0 0 25%; } }
+    flex: 0 0 50%; } }
 
 @media only screen and (min-width: 990px) {
   .product-single__thumbnails-item--large {
-    flex: 0 0 20%; } }
+    flex: 0 0 50%; } }
 
 @media only screen and (min-width: 750px) {
   .product-single__thumbnails-item--full {
@@ -3277,7 +3291,7 @@ hr {
       margin-bottom: 35px; } }
 
 .collection-header {
-  margin-top: 55px;
+/*  margin-top: 55px;*/
 }
 .collection-title {
   text-transform: uppercase;
@@ -3289,7 +3303,7 @@ hr {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   max-width: 1000px;
-  
+
   margin-bottom: 22px;
   margin-top: 22px; }
   @media only screen and (min-width: 750px) {
@@ -7375,6 +7389,13 @@ a.wk-link .wk-icon {
     padding-left:0 !important;}
   }
 
+@media only screen and (max-width: 749px) {
+  .show_all {
+    position: relative !important;
+    top: 622px !important;
+    right: 89px !important;}
+ }
+
 .btn_show_all{
     background: none;
     color: black;
@@ -7385,15 +7406,6 @@ a.wk-link .wk-icon {
     text-transform: uppercase;
     letter-spacing: 0px;
 }
-
-
-
-@media only screen and (max-width: 749px){
-  .btn_show_all{
-    top: 1212px;
-    z-index: 2;
-    right: 62px;}
- }
 
 .btn_show_all-upgrade{
     background: none;
@@ -7410,6 +7422,12 @@ a.wk-link .wk-icon {
 /*================ PAGE LOOKBOOK ================*/
 
 /* Section Title*/
+
+@media only screen and (max-width: 749px){
+  .grid__item-center {
+    padding-left: 30px}
+}
+
 .grid__item-center {
   padding: 0}
 
@@ -7426,7 +7444,7 @@ a.wk-link .wk-icon {
   font-size: 13px;
   margin-top: 27px;
   line-height: 21px;
-  padding: 0 50px 0
+  padding: 0 50px 0;
   text-transform: uppercase;}
 
 /*Section Rich Text 1*/
@@ -7446,13 +7464,11 @@ a.wk-link .wk-icon {
   letter-spacing: 1px;}
 
 /* Section Custom Content 1*/
-
 .img-lookbook {
-  /*max-width: 695px;*/
+  max-width: 695px;
   object-fit: cover;
-  display: block;
-  margin: auto;
-  }
+  position: relative;
+  left: -146px;}
 
 .img-lookbook2 {
   max-width: 459px;
@@ -7552,6 +7568,12 @@ a.wk-link .wk-icon {
   left: -9px;
   position: relative;}
 
+@media only screen and (max-width: 749px){
+  .custom-content-about-text{
+    margin-top: 30px !important;
+  }
+}
+
 .h3-about {
   font-size: 28px;
   padding-right: 71px;
@@ -7561,15 +7583,21 @@ a.wk-link .wk-icon {
   line-height: 23px;
   font-size: 15px;}
 
-
 /*CUSTOM CONTENT 2*/
+
+.about-3images{
+  text-align: center;
+  margin: auto;
+  display: flex;}
+
+/*CUSTOM CONTENT 3*/
 .custom-content-about3 {
   width: 90%;
   margin: auto;}
 
 .img-about-2 {
   max-height: 415Px;
-}
+  }
 
 .h3-about2 {
   font-size: 27px;
@@ -7588,6 +7616,89 @@ a.wk-link .wk-icon {
 /*================ COLLECTION ================*/
 .grid__item-upgrade {
   padding: 13px 8px 0}
+
+
+* > button.wk-button-collection.wk-add-product {
+  opacity: 1 !important;
+  z-index: 999;
+}
+
+.header-collection{
+  text-transform: uppercase;
+  font-size: 41px;
+  margin-bottom:0;}
+
+/*================  ================*/
+.accordion {
+  cursor: pointer;
+  background: transparent;
+  width: 100%;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  outline: none;
+  margin-bottom: 15px;
+  transition: 0.4s;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.accordion svg{
+  width: 13px;
+}
+
+.active, .accordion:hover {
+}
+
+.panel {
+  max-height: 0;
+  margin-top: -15px;
+  padding-left: 10px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/*================ breadcrumbs ================*/
+.breadcrumbs {
+  font-size: calc(((10) / (var(--font-size-base))) * 1em);
+  margin: 0 0 2em;
+}
+
+.breadcrumbs ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  text-transform: uppercase;
+  display: inline-block;
+}
+.breadcrumbs li:last-child a{
+  font-weight: var(--font-weight-body--bolder);
+}
+
+.breadcrumbs a {
+}
+
+.breadcrumbs li:not(:last-child):after {
+  content: "/";
+  display: inline-block;
+  padding-left: .75ch;
+  speak: none;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.breadcrumbs [aria-current="page"]:hover,
+.breadcrumbs [aria-current="page"]:focus {
+  text-decoration: underline;
+}
+
 
 /*================ DIV ================*/
 
@@ -7658,8 +7769,9 @@ div#shopify-section-custom-content-about3{
 }
 
 div#shopify-section-title-lookbook{
-  margin-top: 29px;
-  padding-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 42px;
 }
 
 div#shopify-section-rich-text-lookbook{
@@ -7669,11 +7781,11 @@ div#shopify-section-rich-text-lookbook{
 div#shopify-section-custom-content-lookbook{
   padding:0;
   margin-top:12px;
-  height: 186vh;
+  margin-bottom:80px;
 }
 
 div#shopify-section-rich-text-lookbook2{
-  padding-top: 90px;
+  padding-top: 66px;
 }
 
 div#shopify-section-custom-content-lookbook2{
@@ -7688,77 +7800,11 @@ div#shopify-section-banner-lookbook2{
   padding-top: 20px;
 }
 
-
-* > button.wk-button-collection.wk-add-product {
-  opacity: 1 !important;
-  z-index: 999;
+div#shopify-section-collection-template-alternate{
+  margin-top: 17px;
 }
 
-
-.accordion {
-  cursor: pointer;
-  background: transparent;
-  width: 100%;
-  font-weight: bold;
-  border: none;
-  text-align: left;
-  outline: none;
-  margin-bottom: 15px;
-  transition: 0.4s;
-}
-
-.accordion svg{
-  width: 13px;
-}
-
-.active, .accordion:hover {
-}
-
-.panel {
-  max-height: 0;
-  margin-top: -15px;
-  padding-left: 10px;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.breadcrumbs {
-  font-size: calc(((10) / (var(--font-size-base))) * 1em);
-  margin: 0 0 2em;
-}
-
-.breadcrumbs ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.breadcrumbs li {
-  text-transform: uppercase;
-  display: inline-block;
-}
-.breadcrumbs li:last-child a{
-  font-weight: var(--font-weight-body--bolder);
-}
-
-.breadcrumbs a {
-}
-
-.breadcrumbs li:not(:last-child):after {
-  content: "/";
-  display: inline-block;
-  padding-left: .75ch;
-  speak: none;
-}
-
-.breadcrumbs [aria-current="page"] {
-  color: inherit;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-.breadcrumbs [aria-current="page"]:hover,
-.breadcrumbs [aria-current="page"]:focus {
-  text-decoration: underline;
+div#shopify-section-product-template{
+  margin-top: 30px;
 }
 

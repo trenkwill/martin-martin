@@ -8,7 +8,7 @@ On the HOMEPAGE
       <div class="text-center header-nude">
         <h2>{{ section.settings.title | escape }}</h2>
       </div>
-      <div class="text-right">
+      <div class="text-right show_all">
         {% if section.settings.show_view_all %}
           <a href="{{ collection.url }}" class="btn_show_all" aria-label="{{ 'collections.general.view_all_label' | t: collection_name: collection.title }}">
               {{ 'collections.general.view_all' | t }}

@@ -1,4 +1,4 @@
-<div class="product-template__container page-width"
+<div class="product-template__container page-width page-width-large"
   id="ProductSection-{{ section.id }}"
   data-section-id="{{ section.id }}"
   data-section-type="product"
@@ -17,12 +17,12 @@
 
   {% case section.settings.media_size %}
     {% when 'small' %}
-      {%- assign product_media_width = 'medium-up--one-third' -%}
-      {%- assign product_description_width = 'medium-up--two-thirds' -%}
+      {%- assign product_media_width = 'medium-up--two-thirds' -%}
+      {%- assign product_description_width = 'medium-up--one-third' -%}
       {%- assign height = 345 -%}
     {% when 'medium' %}
-      {%- assign product_media_width = 'medium-up--one-half' -%}
-      {%- assign product_description_width = 'medium-up--one-half' -%}
+      {%- assign product_media_width = 'medium-up--two-thirds' -%}
+      {%- assign product_description_width = 'medium-up--one-third' -%}
       {%- assign height = 530 -%}
     {% when 'large' %}
       {%- assign product_media_width = 'medium-up--two-thirds' -%}
@@ -36,7 +36,7 @@
   {% endcase %}
 
   <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.media_size }}-media{% endif %}">
-    <div class="grid__item product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %}" data-product-single-media-group>
+    <div class="grid__item grid__item-center product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %}" data-product-single-media-group>
       {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
 
       {%- for media in product.media -%}
@@ -47,7 +47,7 @@
 
       <noscript>
         {% capture product_image_size %}{{ height }}x{% endcapture %}
-        <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">
+        <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" class="product-featured-media" style="max-width: {{ height }}px;">
       </noscript>
 
       {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
@@ -71,7 +71,7 @@
           {%- assign enable_thumbnail_slides = true -%}
         {% endif %}
 
-        <div data-thumbnail-slider>
+        <div data-thumbnail-slider class="data-thumbnail-slider">
           <div class="thumbnails-wrapper{% if enable_thumbnail_slides == true %} slider-active{% endif %}" data-slider>
             {% if enable_thumbnail_slides == true %}
               <button type="button" class="btn btn--link medium-up--hide thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--{{ section.id }}" data-slider-button>
@@ -82,7 +82,7 @@
 
             <ul class="product-single__thumbnails product-single__thumbnails-{{ section.id }}" data-slider-container>
               {% if enable_thumbnail_slides == true %}
-                <div class="product-single__thumbnails-slider-track" data-slider-track>
+                <div class="product-single__thumbnails-slider-track " data-slider-track>
               {% endif %}
 
               {% for media in product.media %}
@@ -104,7 +104,7 @@
                         {%- endif -%}
                       {%- endcapture -%}
 
-                      <img class="product-single__thumbnail-image" src="{{ media.preview_image | img_url: '110x110', scale: 2 }}" alt="{{ thumbnailAlt }}">
+                      <img class="product-single__thumbnail-image" src="{{ media.preview_image | img_url: '300x300', scale: 2 }}" alt="{{ thumbnailAlt }}">
                       {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
                         <div class="product-single__thumbnail-badge">
                           {% include 'icon-video-badge-full-color' %}
@@ -284,19 +284,17 @@
                 {{ general }}
 
                 <button class="accordion active">detail {% include 'icon-chevron-down' %}</button>
-                <div class="panel" style="max-height: inherit">{{ detail }}</div>
+                <div class="panel" style="max-height: inherit">{{ details }}</div>
 
                 <button class="accordion">Livraison et retour {% include 'icon-chevron-down' %}</button>
                 <div class="panel">{{ livraison }}</div>
 
                 <button class="accordion">entretien {% include 'icon-chevron-down' %}</button>
                 <div class="panel">{{ entretien }}</div>
-                
+
               </div>
 
-        {% if section.settings.show_share_buttons %}
-          {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
-        {% endif %}
+
     </div>
   </div>
 </div>
@@ -327,7 +325,7 @@
             {% when 'image' %}
               {% if media.alt contains "porte" %}
                 <li class="grid__item small--one-half medium-up--one-quarter">
-                  
+
                   <div class="grid-view-item product-card">
                     {{ media | media_tag: class: 'media-item', image_size: image_size }}
                   </div>
@@ -353,7 +351,7 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
+    }
   });
 }
 </script>
